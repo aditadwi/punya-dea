@@ -70,3 +70,14 @@ class ProdukController extends Controller
       return redirect()->route('produk.index')->with('deleted','Data Produk Berhasil Dihapus');
   }
   }
+  public function update(Produk $produk, Request $request): RedirectResponse
+  {
+      $request->validate([
+        "nama"=>"required",
+       
+        "stock"=>"required",
+        "price"=>"required",
+      ]);
+      $produk->update($request->all());
+      return redirect()->route('produk.index')->with('update','Data Produk Berhasil Diubah');
+  }

@@ -61,13 +61,3 @@ public function show(pembeli $pembeli):view
     return view('pembeli.tampil',compact('pembeli'))->with(["title"=>"Data Pembeli"]);
 }
 }
-public function update(Pembeli $pembeli, Request $request):RedirectResponse
-    {
-        $request->validate([
-            "nama"=>"required",
-        ]);
-        if (empty($request['hp'])) {
-            $request['hp']='null';
-        if (empty($request['alamat'])) 
-            $request['alamat']='null';
-        }
