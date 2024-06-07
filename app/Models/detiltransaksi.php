@@ -20,16 +20,3 @@ class detiltransaksi extends Model
         return $this->belongsTo(Produk::class);
     }
 }
-protected $fillable=['transaksi_id','produk_id','qty','price'];
-    use HasFactory;
-
-    public function transaksi():BelongsTo
-    {
-        return $this->belongsTo(Transaksi::class);
-    }
-
-    public function produk():BelongsTo
-    {
-        return $this->belongsTo(Produk::class);
-    }
-}
