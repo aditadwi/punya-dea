@@ -32,11 +32,3 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('success','Data User Beerhasil Ditambahkan');
     }
 }
-$password=Hash::make($request->password);
-$request->merge([
-    "password"=>$password
-]);
-User::create($request->all());
-return redirect()->route('user.index')->with('success','Data User Beerhasil Ditambahkan');
-}
-}
