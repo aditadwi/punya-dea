@@ -32,3 +32,14 @@ class LaporanController extends Controller
         return view('laporan.laporan', compact('transaksi', 'totalpenjualan', 'title'));
     }
 }
+transaksi = Transaksi::All();
+        $totalpenjualan = Transaksi::sum('total');
+        $title = "Laporan Penjualan";
+        
+        if ($request->page == 'laporan') {
+            return view('laporan.laporan', compact('transaksi', 'totalpenjualan', 'title'));
+        }
+
+        return view('laporan.laporan', compact('transaksi', 'totalpenjualan', 'title'));
+    }
+}

@@ -46,14 +46,4 @@ class WelcomeController extends Controller
 
     
 }
-return view('welcome',[
-    "pembeli"=> $pembeli,
-    "produk"=> $produk,
-    "user"=> $user,
-    "datatransaksi" => Transaksi::paginate(5),
-    "title"=>"welcome"
-]);
-
-}
-
 
